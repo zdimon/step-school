@@ -18,6 +18,8 @@
   "homepage": "https://github.com/zdimon/step-school#readme",
   "dependencies": {
     "bootstrap": "^4.5.2",
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
   }
