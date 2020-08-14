@@ -27,12 +27,31 @@ function showCard(card) {
     $('#deck').append(cardTpl);
 }
 
+function shuffle() {
+    var currentIndex = deck.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * deck.length);
+    currentIndex -= 1;
+    console.log(randomIndex);
+    temporaryValue = deck[currentIndex];
+    deck[currentIndex] = deck[randomIndex];
+    deck[randomIndex] = temporaryValue;
+    
+    }
+}
+
 makeDeck();
 
 
-deck.forEach(function(el) {
-    showCard(el);
+// deck.forEach(function(el) {
+//     showCard(el);
+// })
+
+$('#take-card').on('click', function(){
+    showCard(deck.pop());
+    
+    console.dir(deck);
 })
 
-console.dir(deck);
+shuffle();
 
