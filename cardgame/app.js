@@ -19,9 +19,20 @@ function makeDeck(){
 }
 
 function showCard(card) {
-    
+    cardTpl = `<div style="
+    width: 69px; height: 94px; 
+    background-image: url(images/cards.png);
+    background-position: ${card.rank_id*69}px ${card.face_id*94}px;
+    ">${card.rank} </div>`;
+    $('#deck').append(cardTpl);
 }
 
 makeDeck();
+
+
+deck.forEach(function(el) {
+    showCard(el);
+})
+
 console.dir(deck);
 
