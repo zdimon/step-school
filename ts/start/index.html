@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head><title>TypeScript Learning</title></head>
+    <body>
+        <script src="node_modules/systemjs/dist/system.js"></script>
+        <script src="node_modules/typescript/lib/typescript.js"></script>
+        <script>
+            System.config({
+                defaultJSExtensions: true
+            });
+            System
+              .import('built/app.js')
+              .then(null, console.error.bind(console));
+        </script>
+    </body>
+</html>
