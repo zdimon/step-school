@@ -1,4 +1,6 @@
 app = {
+    userAccount: 0,
+    userBet: 0,
     faces: ["clubs","diams","hearts","spades"],
     ranks:['Z','A',2,3,4,5,6,7,8,9,10,'J','Q','K'],
     deck: [],
@@ -21,7 +23,7 @@ app = {
         while (0 !== currentIndex) {
         randomIndex = Math.floor(Math.random() * this.deck.length);
         currentIndex -= 1;
-        console.log(randomIndex);
+        // console.log(randomIndex);
         temporaryValue = this.deck[currentIndex];
         this.deck[currentIndex] = this.deck[randomIndex];
         this.deck[randomIndex] = temporaryValue;
@@ -42,11 +44,25 @@ app = {
         
         this.makeDeck();
         this.shuffle();
-        console.log(this.deck);
+        //console.log(this.deck);
         $('#take-card').on('click', () => {
-            console.log(this);
+            //console.log(this);
             this.showCard(this.deck.pop());
         })
+
+        var addMoneyButton = $('#add-money-button');
+        var betMoneyButton = $('#bet-money-button');
+        var userAccountP = $('#user-account');
+
+        addMoneyButton.on('click',()=>{
+            console.log('ddddsefwefgsdgsd');
+            this.userAccount = 100;
+            userAccountP.html(this.userAccount);
+            addMoneyButton.hide();
+            betMoneyButton.show();
+
+        });
+
     }
 }
 
