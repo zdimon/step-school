@@ -9,13 +9,13 @@ while(start_diapozon < end_diapozon-1)
     start_diapozon++;
     pointer+=start_diapozon;
 }
-console.log(pointer);
+alert(pointer);
 
 
 /***************************************************/
 //2
-var chislo = prompt('chislo');
-var chislo3 = prompt('chislo2');
+var chislo = Number(prompt('chislo'));
+var chislo3 = Number(prompt('chislo2'));
 var i = 0;
 var j = 0;
 while(i<chislo)
@@ -36,11 +36,11 @@ while(j<chislo3)
         console.log(t2);
     }    
 }
-if(t==t2)
+/*if(t==t2)
 {
    console.log(this);
 }
-
+*/
 
 /***************************************************/
 //3
