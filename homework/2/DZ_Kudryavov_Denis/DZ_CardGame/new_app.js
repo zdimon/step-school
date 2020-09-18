@@ -89,6 +89,11 @@ app = {
         $('#deck').append(cardTpl);
 
         this.userScore = this.userScore+this.getScoreByCard(card);
+        if(this.userScore>21)
+        {
+            alert("GameOver");
+            $('#take-card').hide();
+        }
         $('#user-score').html(this.userScore);
 
     },
