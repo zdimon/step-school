@@ -74,6 +74,9 @@ app = {
             case 'J':
                 return 2;
             break;
+            case 'Z':
+                return 21;
+            break;
         
             default:
                 break;
