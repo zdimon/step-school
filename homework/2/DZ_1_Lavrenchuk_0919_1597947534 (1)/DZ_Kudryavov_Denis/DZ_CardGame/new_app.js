@@ -34,29 +34,12 @@ app = {
 
     getScoreByCard: (card) => {
         console.log(card);
-        switch (card.rank) {
-            case 7:
-                return 7;
+        switch (card) {
+            case ranks_id['K']:
+                
             break;
-
-            case 8:
-                return 8;
-            break;
-
-            case 5:
-                return 5;
-            break;
-
-            case 'K':
-                return 2;
-            break;
-
-            case 'Q':
-                return 2;
-            break;
-
+        
             default:
-                return 1;
                 break;
         }
     },

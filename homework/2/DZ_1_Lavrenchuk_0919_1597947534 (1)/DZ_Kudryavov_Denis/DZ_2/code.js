@@ -9,40 +9,33 @@ while(start_diapozon < end_diapozon-1)
     start_diapozon++;
     pointer+=start_diapozon;
 }
-alert(pointer);
+console.log(pointer);
 
 
 /***************************************************/
 //2
-var chislo = parseInt(prompt('chislo'));
-var chislo3 = parseInt(prompt('chislo2'));
+var chislo = prompt('chislo');
+var chislo3 = prompt('chislo2');
 var i = 0;
 var j = 0;
 while(i<chislo)
 {
     i++;
-    var tmparr = []
     var t = chislo / i;
     if(chislo % i==0)
     {
-        tmparr.push(t);
         console.log(t);
     }    
 }
 while(j<chislo3)
 {
     j++;
-    var tmparr2 = []
     var t2 = chislo3 / j;
     if(chislo3 % j==0)
     {
         console.log(t2);
-        tmparr2.push(t);
     }    
 }
-console.log(tmparr);
-console.log(tmparr2);
-
 if(t==t2)
 {
    console.log(this);
