@@ -3,11 +3,31 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    
+    <style>
+      #bet-money-button {
+        display: none;
+      }
+      #user-score {
+        color: red;
+        font-weight: bold;
+      }
+      #user-bet{
+          color: green;
+      }
+    </style>
     <title>Card game</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <h1>Black Jack</h1>
+
+    <p id="user-account"></p>
+    <p id="user-bet"></p>
+    <p id="user-score"></p>
+
+    <button id="add-money-button">Add money</button>
+
+    <button id="bet-money-button">Bet 10 grivnas</button>
+
 
     <div id="deck"></div>
 
