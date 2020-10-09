@@ -50,10 +50,10 @@ var StarStream$ = Rx.Observable
     return Rx.Observable.interval(SPEED)
     .map(() => {
         starrArray.forEach((star) => {
-            if(star.x <= 0){
-                star.x = canvas.width;
+            if(star.y <= 0){
+                star.y = canvas.height; 
             }
-            star.x -= 4;
+            star.y -= 3;
         });
         return starrArray;
     })
@@ -69,7 +69,7 @@ StarStream$.subscribe((el) => {
 function paintStars(stars) {
     ctx.fillStyle = '#000000';
     ctx.fillRect(0,0, canvas.width, canvas.height);
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = 'red';
     stars.forEach(star => {
         ctx.fillRect(star.x, star.y, star.size, star.size);
     });
