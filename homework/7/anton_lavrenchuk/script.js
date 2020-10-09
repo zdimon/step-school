@@ -1,20 +1,9 @@
-/*
-$("#go").click(function(){
-    $("#block").animate({ 
-        width: "70%",         // ширина станет 70%
-        opacity: 0.4,         // прозрачность будет 40%
-        marginLeft: "0.6in",  // отступ от левого края элемента станет равным 6 дюймам
-        fontSize: "3em",      // размер шрифта увеличится в 3 раза
-        borderWidth: "10px"   // толщина рамки станет 10 пикселей
-    }, 1500);               // анимация будет происходить 1,5 секунды
-    });
-*/
-
 var app = {
 
     field : [],
-
-    //active_cell,
+	
+    active_cell : null,
+	active_cell_color : null,
 
     init_fields : function()
     {
@@ -25,7 +14,47 @@ var app = {
             for ( let j = 0; j < 8; j++ ) 
             {
                 this.field[i][j] = $('<div></div>');
-                this.field[i][j].on( 'click', function(){});
+                this.field[i][j].on( 'click', () => {
+					if( this.active_cell == null ){ // if NO figure active
+						if( this.field[i][j].css('background-image') !== 'none') { // if cell is NOT empty
+						
+							this.active_cell = this.field[i][j];
+							this.field[i][j].css( "background-color", "#ff0000" );
+							
+							if( i % 2 == j % 2 )
+							{
+								this.active_cell_color = "#ebebd0"; // white
+							}
+							else
+							{
+								this.active_cell_color = "#779455"; // black
+							}
+						}
+					}
+					else { // if active figue
+						if( this.field[i][j].css('background-image') === 'none') { // if cell is empty
+							this.active_cell.css( "background-image", "" );
+							this.field[i][j].css( "background-image", "url('all.png')" );
+							this.field[i][j].css( "background-position", this.active_cell.css('background-position') );
+							this.active_cell.css( "background-color", this.active_cell_color );
+							this.active_cell = null;
+						}
+						else // if cell is NOT empty
+						{
+							this.active_cell.css( "background-color", this.active_cell_color );
+							if( i % 2 == j % 2 )
+							{
+								this.active_cell_color = "#ebebd0"; // white
+							}
+							else
+							{
+								this.active_cell_color = "#779455"; // black
+							}
+							this.active_cell = this.field[i][j]; // change active figure
+							this.field[i][j].css( "background-color", "#ff0000" );
+						}
+					}
+				});
                 this.field[i][j].css( "width", "50px" );
                 this.field[i][j].css( "height",  "50px" );
                 this.field[i][j].css( "position", "absolute" );
@@ -109,8 +138,8 @@ var app = {
         this.set_figure( this.field[0][0], 'rook',      'black' );
         this.set_figure( this.field[0][7], 'rook',      'black' );
 
-        this.set_figure( this.field[7][3], 'king',      'white' );
-        this.set_figure( this.field[7][4], 'queen',     'white' );
+        this.set_figure( this.field[7][4], 'king',      'white' );
+        this.set_figure( this.field[7][3], 'queen',     'white' );
         this.set_figure( this.field[7][2], 'bishop',    'white' );
         this.set_figure( this.field[7][5], 'bishop',    'white' );
         this.set_figure( this.field[7][1], 'knight',    'white' );
@@ -133,4 +162,3 @@ var app = {
 }
 
 app.init();
-console.log( app.field );
