@@ -50,10 +50,10 @@ var StarStream$ = Rx.Observable
     return Rx.Observable.interval(SPEED)
     .map(() => {
         starrArray.forEach((star) => {
-            if(star.y >= canvas.height){
-                star.y = 0;
+            if(star.x <= 0){
+                star.x = canvas.width;
             }
-            star.y += 3;
+            star.x -= 4;
         });
         return starrArray;
     })
