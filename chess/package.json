@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "expess": "0.0.1-security"
+    "expess": "0.0.1-security",
+    "typescript": "^4.0.3"
   }
 }
