@@ -1,5 +1,7 @@
+import { config } from './config';
 import { SocketServer } from './lib/SocketServer';
 console.log('Starting server...');
+
 
 var express = require('express');
 const app = require('express')();
