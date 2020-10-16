@@ -1,0 +1,15 @@
+{
+  "name": "db_debtors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "light-server": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "elena korbilo",
+  "license": "ISC"
+}

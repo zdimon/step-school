@@ -34,7 +34,14 @@ app = {
 
     getScoreByCard: (card) => {
         console.log(card);
-        return 5;
+        switch (card) {
+            case ranks_id['K']:
+                
+            break;
+        
+            default:
+                break;
+        }
     },
 
     showCard: function(card) {
