@@ -25,6 +25,15 @@
     "lite-server": "^2.5.4",
     "popper.js": "^1.16.1",
     "typescript": "^4.0.2"
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7d1548de432ceefb6b68b257f1473ccb9fb2f3bb
+  }
+=======
+=======
+>>>>>>> 3bb117640f2e7a058534c7d38ae2de579ce5e83b
   },
   "devDependencies": {}
 }
