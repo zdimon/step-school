@@ -1,5 +1,6 @@
-var db_debtors = [];
+var db_debtors = JSON.parse(localStorage.getItem('dima'));
 var num = 0;
+console.log(db_debtors);
 
 function add_new_record(){
   // Находим нужную таблицу
@@ -95,6 +96,8 @@ $('#delete').on('click', function() {
 
       db_debtors.push(record);
       console.log(db_debtors);
+
+      let tmp = localStorage.setItem('dima',JSON.stringify(db_debtors));
               
       add_new_record();
       $('form input[type="text"], form input[type="number"]').val('');
