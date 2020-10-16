@@ -1,21 +1,20 @@
-export class Board {
-    constructor(){
+import { config } from "./../config";
 
-    }
+export class Board {
+    desk = [];
+    constructor(){
+            for (let i = 0; i < config.width; i++) 
+            {
+                const element = this.desk[i];
+                for (let j = 0; j < config.height; j++)
+                    {
+                        const element = this.desk[j];
+                    }
+            }
+        }
+    
 
     getBoard() {
-        return[
-            [
-                {  
-                   x: 1, 
-                   y: 2, 
-                   color: 'red', 
-                   borderColor: 'green', 
-                   border: 1, 
-                   power: 50,
-                   actor: {}
-                }
-            ]
-        ]
-    }
+        return this.desk;
+        }
 }
