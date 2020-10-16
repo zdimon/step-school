@@ -4,12 +4,36 @@
 	<title>DB debtors</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
   
   <div id="container">
     <h1>Table with debtors</h1>
+    <table id="table">
+      <head>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Sum</th>
+        <th>Paid</th>
+      </head>
+      <tbody></tbody>
+    </table>
+
+    <button id="delete">Delete</button>
+    
+
+    <form action="" method="GET" id="new_record">
+      <br>Name <input type="text" id="name"><br>
+      Phone <input type="text" id="phone"><br>
+      Sum <input type="number" id="sum"><br>
+      Paid <input type="text" id="paid"><br>
+      <button id="save">Add new record</button>
+      <button id="edit">Edit record</button>
+    </form>
+    
   </div>
 
   <script src="app.js"></script>
