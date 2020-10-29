@@ -12,6 +12,7 @@
 
             if(sessionStorage.getItem('username')) {
                 this.initRoom();
+                this.wsConnect();
             } else {
                 this.loginForm();
                 this.getStickers();
@@ -19,9 +20,53 @@
 
        }
 
+       app.getCurrenQuestion = function() {
+        $.get(`http://${this.serverUrl}/v1/quiz/get_current_question`,(data) => {
+            console.log(data);
+            $('#currentQuestion').append(data.question+data.answers);
+           
+       })
+       }
+
        app.initRoom = function() {
         console.log('initRoom');
+        $('#sendButton').on('click', () => {this.sendMessage()});
+        this.getCurrenQuestion();
        };
+
+       app.wsConnect = function() {
+
+        var webSocket = new WebSocket('ws://localhost:7777/quiz/');
+
+        webSocket.onmessage = (event) => {
+            var message = JSON.parse(event.data)
+            console.log(message);
+        }
+
+        webSocket.onclose =  (event) => {
+            console.log('Close connection');
+            
+        };
+
+        webSocket.onopen =  (event) => {
+            console.log('Connection established');
+        };
+
+
+       }
+
+       app.sendMessage = function() {
+           let data = {
+               playername: sessionStorage.getItem('username'),
+               message: $('#myMessage').val()
+           };
+           $.post(
+           `http://${this.serverUrl}/v1/quiz/save_message`,
+           data,
+           (rez) => {
+               console.log(rez);
+           })
+       }
 
        app.getStickers = function() {
            $.get(`http://${this.serverUrl}/v1/quiz/sticker/list`,(data) => {
@@ -52,6 +97,9 @@
        app.doLogin = function() {
  
            sessionStorage.setItem('username',$('#userName').val())
+
+
+
        }
 
 
