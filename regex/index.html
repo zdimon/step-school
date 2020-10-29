@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  
+</head>
+<body>
+    Regular expressions
+    <form onsubmit="event.preventDefault(); check();">
+        name:
+        <input name="email" id="email" />
+       
+        <div class="red">
+            Name: <p></p>
+            Surename: <p></p> 
+        </div>
+
+        <button style="display: none;" id="button" type="submit" >Submit</button>
+    </form>
+
+<script>
+
+    // +38(095)5506342
+    // bla@blabla.com
+    // @zdimon ^@ $
+
+    // var tpl = /\d{7}/;
+
+    // check = function() {
+    //     let text = $('#username').val();
+    //     console.log(tpl.test(text));
+    // }
+    // $('#username').on('input',check)
+
+    str = "20% of population owning 80% income";
+    template = /\d+/g;
+    console.log(str.match(template));
+    //console.log(template.exec(str))
+
+</script>
+</body>
+</html>
