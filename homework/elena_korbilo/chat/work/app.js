@@ -54,29 +54,28 @@
            sessionStorage.setItem('username',$('#userName').val())
        }
 
+       $('#sendButton').on('click', function(){
+            var date = new Date();
 
+           let msg = $('#message').val();
+           console.log(msg);
+           let msg_chat = `<div class="chat">
+           <div class="chat-user">
+              <a class="avatar m-0">
+              <img src="images/user/1.jpg" alt="avatar" class="avatar-35 ">
+              </a>
+              <span class="chat-time mt-1">${date.getHours()}:${date.getMinutes()}</span>
+           </div>
+           <div class="chat-detail">
+              <div class="chat-message">
+                 <p>${msg}</p>
+              </div>
+           </div>
+        </div>`;
+           document.getElementById('chat-content').innerHTML += msg_chat;
+       })
           
        return app;
 
     };
 })(jQuery);
-
-$('#sendButton').on('click', function(){
-   let msg = $('#text_message').val();
-   
-    document.getElementById("messages").innerHTML += `<div class="chat">
-                                                            <div class="chat-user">
-                                                   <a class="avatar m-0">
-                                                   <img src="images/user/1.jpg" alt="avatar" class="avatar-35 ">
-                                                   </a>
-                                                   <span class="chat-time mt-1">6:45</span>
-                                                </div>
-                                                <div class="chat-detail">
-                                                   <div class="chat-message">
-                                                      <p>${msg}</p>
-                                                   </div>
-                                                </div>
-                                             </div>`;
-    
-    
-})
