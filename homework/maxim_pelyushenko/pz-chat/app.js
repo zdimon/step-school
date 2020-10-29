@@ -29,9 +29,16 @@
         {
             console.log('loginForm');
 
-            let tpl = 
-
-            $('#loginForm').append(tpl);
+            app.loginForm = function() 
+            {
+                console.log('loginForm');
+                let tpl = `<div class="tab-pane fade active show" id="default-block" role="tabpanel">
+                <div class="chat-start">
+                   <input type="text" />
+                   <button id="chat-start" class="btn bg-white mt-3">Start
+                   Conversation!</button>
+                </div>`;
+                $('#loginForm').append(tpl);
         }
 
         return app;
