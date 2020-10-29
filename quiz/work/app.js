@@ -34,6 +34,24 @@
         this.getCurrenQuestion();
        };
 
+       app.addMessage = function(message) {
+           let tpl = `
+           <div class="chat">
+              <div class="chat-user">
+                 <a class="avatar m-0">
+                 ${message.is_right}
+                 </a>
+                 <span class="chat-time mt-1">6:45</span>
+              </div>
+              <div class="chat-detail">
+                 <div class="chat-message">
+                    <p>${message.text}</p>
+                 </div>
+              </div>
+           </div>`;
+           $('#chatBox').append(tpl);
+       }
+
        app.wsConnect = function() {
 
         var webSocket = new WebSocket('ws://localhost:7777/quiz/');
@@ -41,6 +59,7 @@
         webSocket.onmessage = (event) => {
             var message = JSON.parse(event.data)
             console.log(message);
+            this.addMessage(message.message);
         }
 
         webSocket.onclose =  (event) => {
