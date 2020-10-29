@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+    <body>
+        Regulatr exeption
+        <form id = "mainform" onsubmit = "event.preventDefault();">
+        Phone number:
+        <input name = "phone number" id = "PhoneNum"/><br><br>
+        Email:
+        <input name = "email" id = "email"/><br><br>
+        Telegram:
+        <input name = "telgram" id = "telegram"/><br><br>
+        Telegram Bot:
+        <input name = "telgramBOT" id = "telegramBOT"/><br>
+        <button id = "button" type = "submit" disabled>Submit</button>
+        </form>
+        <script>
+
+            var tplPhoneNum = /\+\d{1,3}[(]\d{3}[)]\d{7}/;
+            var tplEmailVal = /\D[a-zA-Z]+\@+\D[a-zA-Z]+\.[a-zA-Z]/;
+            var tplTelegram = /^@\D[a-zA-Z]/;
+            var tplTelegramBOT = /^@\D[a-zA-Z]BOT$/;
+
+            checkAll = function()
+            {
+                if(checkTelegram() && checkNum() && checkEmail() && checkTelegram() && checkTBot())
+                {
+                    document.getElementById("button").disabled = false;
+                }
+
+            }
+            
+            checkNum = function(){
+                let text =$('#PhoneNum').val();
+                console.log(tplPhoneNum.test(text));
+            }
+            $('#PhoneNum').on('input',checkNum)
+            
+            checkEmail = function(){
+                let text =$('#email').val();
+                console.log(tplEmailVal.test(text));
+            }
+            $('#email').on('input',checkEmail)
+            
+            checkTelegram = function(){
+                let text =$('#telegram').val();
+                console.log(tplTelegram.test(text));
+                return tplTelegram.test(text);
+            }
+            $('#telegram').on('input',checkTelegram)
+            
+            checkTBot = function(){
+                let text =$('#telegramBOT').val();
+                console.log(tplTelegramBOT.test(text));
+            }
+            $('#telegramBOT').on('input',checkTBot)
+
+            $('#mainform').on('input',checkAll)
+            
+        </script>
+    </body>
+</html>

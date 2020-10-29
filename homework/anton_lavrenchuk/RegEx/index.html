@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <form onsubmit="event.preventDefault(); check();">
+
+            <input name="ip"    id = "ip">
+            <input name="phone" id = "phone">
+            <input name="email" id = "email">
+
+            <button id = "button" type="submit" hidden>Submit</button>
+
+            <div class="fullname">
+                
+                <input name="infullname" id = "infullname">
+
+                <br>
+
+                Name : <p id="name" style="display: inline-block;"></p>
+
+                <br>
+
+                Lastname : <p id="lastname" style="display: inline-block;"></p>
+                
+            </div>
+
+        </form>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
