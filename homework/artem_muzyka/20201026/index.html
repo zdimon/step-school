@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Form </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+	<form>
+		<h5>Form</h5>
+		<input type="text" id="edit" placeholder="name"><br>
+		<input type="mail" id="mail" placeholder="mail"><br>
+		<input type="phone" id="phone" placeholder="phone"><br>
+		<input type="text" id="telegram" placeholder="telegram"><br>
+		<button id="btn">Button</button>
+
+		<br><br>
+		<input type="text" id="fullname" placeholder="fullname">
+		<br><br>
+		<input type="text" id="Firstname" placeholder="Firstname">
+		<input type="text" id="SecondName" placeholder="SecondName">
+	</form>
+
+	<script>
+		// +38(095) 1215512
+		// sdfjkl@gmail.com
+		// @brgrgl
+
+		let  edit_check = /\D/;
+		let  mail_check = /^.+\@+.+\.+.$/;
+		let  phone_check = /^ [0-9]{11} $/;
+		let  telegram_check = /^ \@ + \D $/;
+
+
+		let check = function( el ) {
+			//console.log( $(el.target) );
+
+			switch ( $(el.target).attr( 'id' ) ) {
+				case 'edit':
+					console.log( edit_check.test( $(`#${el.id}`).val() ) );
+					break;
+				case 'mail':
+					console.log( mail_check.test( $(`#${el.id}`).val() ) );
+					break;	
+				case 'phone':
+					console.log( phone_check.test( $(`#${el.id}`) ) );
+					break;	
+				case 'telegram':
+					console.log( telegram_check.test( $(`#${el.id}`) ) );
+					break;		
+			
+				default:
+					break;
+			}
+		}
+
+
+		$('#edit').bind('input', function (  event  ) {
+			check( event );
+		})
+
+		$('#mail').bind('input', function (  event ) {
+			check( event );
+		})
+
+		$('#phone').bind('input', function ( event ) {
+			check( event );
+		})
+
+		$('#telegram').bind('input', function ( event ) {
+			check( event );
+		})
+
+		$('#fullname').dblclick( function () {
+			//$('#fullname').split( '\W');
+			console.log( $('#fullname').val() );
+			
+		})
+
+	</script>
+</body>
+</html>
