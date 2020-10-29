@@ -28,6 +28,10 @@
         app.loginForm= function()
         {
             console.log('loginForm');
+
+            let tpl = 
+
+            $('#loginForm').append(tpl);
         }
 
         return app;
