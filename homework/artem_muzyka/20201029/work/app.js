@@ -62,7 +62,8 @@
 })(jQuery);
 
 $('#sendButton').on('click', function(){
-    //alert($('#text_message').val() );
+   let msg = $('#text_message').val();
+   
     document.getElementById("messages").innerHTML += `<div class="chat">
                                                             <div class="chat-user">
                                                    <a class="avatar m-0">
@@ -72,7 +73,7 @@ $('#sendButton').on('click', function(){
                                                 </div>
                                                 <div class="chat-detail">
                                                    <div class="chat-message">
-                                                      <p></p>
+                                                      <p>${msg}</p>
                                                    </div>
                                                 </div>
                                              </div>`;
