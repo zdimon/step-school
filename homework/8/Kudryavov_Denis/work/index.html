@@ -40,17 +40,7 @@
                            <div class="chat-data-block">
                               <div class="row">
                                  <div class="col-lg-3 chat-data-left scroller">
-                                    <div class="chat-search pt-3 pl-3">
-                                       <div class="d-flex align-items-center">
-                                          <div class="chat-profile mr-3">
-                                             <img src="images/user/1.jpg" alt="chat-user" class="avatar-60 ">
-                                          </div>
-                                          <div class="chat-caption">
-                                             <h5 class="mb-0">Bni Jordan</h5>
-                                             <p class="m-0">Web Designer</p>
-                                          </div>
-                                          <button type="submit" class="close-btn-res p-3"><i class="ri-close-fill"></i></button>
-                                       </div>
+                                    <div id ="my" class="chat-search pt-3 pl-3">
                                        <div id="user-detail-popup" class="scroller">
                                           <div class="user-profile">
                                              <button type="submit" class="close-popup p-3"><i class="ri-close-fill"></i></button>
@@ -2102,7 +2092,18 @@
       <!-- Footer END -->
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+      <div id="my">
+
+      </div>
+
       <script src="js/jquery.min.js"></script>
+      <script src="app.js"></script>
+
+      <script>
+        var app = $('#my').quizPlugin();
+        app.start();
+      </script>
 
    </body>
 </html>
