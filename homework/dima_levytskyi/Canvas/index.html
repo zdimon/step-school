@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+
+   <head>
+
+    <meta charset="utf-8">
+
+   </head>
+
+   <body>
+
+      <h1> Канвас </h1>
+      <video width = "500" height="300" autoplay = "true" src="vid.mp4" controls="controls" id = "videoElement"></video>
+      <canvas width = "300" height="400" id="canvas"> </canvas>
+      <button id = "take">Take picture</button>
+      <button id = "draw">Draw square</button>
+
+      <script>
+
+        var video = document.querySelector('#videoElement');
+        var button = document.querySelector('#take')
+        var canvas = document.querySelector('#canvas')
+        var PaintFigure = document.querySelector('#draw')
+        var context = canvas.getContext('2d');
+
+        button.addEventListener( 'click', (event)  => {
+
+            var data = canvas.toDataURL('image/png');
+            console.log(data);
+            context.drawImage(video, 0, 0, 500, 300);
+        });
+
+        PaintFigure.addEventListener( 'click', (event) => {
+
+            
+            setInterval( DrawSmile, 1000 )
+            setInterval( clear, 1999 )
+            
+
+            // draw an unrotated reference rect
+        });
+
+        var DrawSmile = function(){
+            var cw=canvas.width;
+            var ch=canvas.height;
+            var rr=Math.min(cw,ch);
+            var cx=rr/2;
+            var cy=rr/2;
+            //Круг
+            context.fillStyle = "yellow";
+            context.beginPath();
+            context.arc(cx, cy, Math.floor(rr*0.25), 0, 2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.lineWidth = 2;
+            context.stroke();
+            context.fillStyle = "black";
+            //Левый глаз
+            context.beginPath();
+            context.arc(Math.floor(rr*0.41), Math.round(rr*0.4), Math.round(rr*0.03), 0, 2*Math.PI);
+            context.closePath();
+            context.fill();
+            //Правый глаз
+            context.beginPath();
+            context.arc(Math.ceil(rr*0.59), Math.floor(rr*0.4), Math.round(rr*0.03), 0, 2*Math.PI);
+            context.closePath();
+            context.fill();
+            //Рот
+            context.beginPath();
+            context.arc(cx, Math.round(rr*0.52), Math.round(rr*0.13), Math.PI, 2*Math.PI, true);
+            context.closePath();
+            context.fill();
+
+            context.rotate( 1 * Math.PI / 180 )
+        }
+        
+        var clear = function(){
+            
+            context.clearRect(0, 0, canvas.width, canvas.height)
+        }
+
+      </script>
+   </body>
+</html>
