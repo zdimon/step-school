@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    Cookie
+    <ul id="table"></ul>
+    
+    
+    login:
+    <input  name="login" id="login"><br>
+    password:
+    <input  name="password" id="password"><br>
+    
+    <button type="submit" id ="button"  >Submit</button>
+    
+    
+    
+    
+    
+    
+    <script src="app.js"></script>
+    
+
+</body>
+</html>
+
+<!--
+    onchange ="checkBOT()"
+    <input onchange ="checkTelegram()" name="telegram" id="telegram"><br>
+    phone:
+    <input onchange ="checkPhone()" name="email" id="email"><br>
+    email:
+    
+    <form onsubmit="event.preventDefault(); check();">
+ id="form" onsubmit="event.preventDefault(); check();"
+            
+            checkALL = function() {
+                    if (checkTelegram()&&checkPhone()&&checkEmail()&&checkBOT()) {
+                        document.getElementById("button").disabled = false;
+                    }
+                    else{
+                        document.getElementById("button").disabled = true;
+                    }
+            }
+
+            checkTelegram = function() {
+                    let text = $('#telegram').val();
+                    console.log(tplT.test(text));
+                    return tplT.test(text);
+            }
+            
+
+            checkPhone = function() {
+                    let text = $('#email').val();
+                    console.log(tplE.test(text));
+                    return tplE.test(text);
+            }
+            
+
+            checkEmail = function() {
+                    let text = $('#phone').val();
+                    console.log(tplP.test(text));
+                    return tplP.test(text);
+            }
+            
+
+            checkBOT = function() {
+                    let text = $('#telegramBOT').val();
+                    console.log(tplTB.test(text));
+                    return tplTB.test(text);
+            }
+            
+            $('#form').on('input',checkALL)
+-->
+
+<!-- var tplE = /\+\d{1,3}\(\d{3}\)\d{7}/;
+            var tplP = /\D[a-zA-Z]+\@+\D[a-zA-Z]+\.+\D[a-zA-Z]/;
+            var tplT = /^@.{3,20}/;
+            var tplTB = /^@.+BOT$/; -->
+<!-- Name:
+                <input onchange ="checkTelegram()" name="name" id="name"><br>
+
+                <button type="submit" id ="button" disabled >Submit</button>
+<div class="green">
+Name: <p></p>
+Surname: <p></p>
+</div>-->
