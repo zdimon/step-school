@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color palette</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+  <div id="form">
+    <h3>Create new color</h3>
+
+    <label for="color">Color:</label><span id="error_color"></span><br>
+    <input type="text" id="color" required><br>
+
+    <label for="type">Type:</label><span id="error_type"></span><br>
+    <select name="type" id="type">
+      <option value="RGB">RGB</option>
+      <option value="RGBA">RGBA</option>
+      <option value="HEX">HEX</option>
+    </select><br>
+
+    <label for="code">Code:</label><span id="error_code"></span><br>
+    <input type="text" id="code"><br>
+
+    <button id="button">Save</button>
+
+  </div>
+
+  <div id="container">
+    <h3>All colors</h3>
+  </div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
