@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Cookies</title>
+        <link src="http://code.jquery.com/jquery-latest.min.js"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="jquery.cookie.js"></script>
+    </head>
+    <body>
+
+        <input id="login" type="text" placeholder="email"><br>
+        <input id="pass" type="password" placeholder="password"><br>
+        <button id="btn">Send information</button>
+        <button id="btn2" style="display: none;">Drop account</button>
+        <script> 
+
+        if( $.cookie('true') == "true")
+        {
+            $('#btn2').css("display", "inline");
+
+            $('#pass').css("display","none");
+            $('#login').css("display","none");
+            $('#btn').css("display","none") ;
+
+
+
+        }
+        
+        $('#btn').click( function(){
+            $.cookie("true",  "true");                   
+        })
+
+        $('#btn2').click(function(){
+            $('#pass').css("display","inline");
+            $('#login').css("display","inline");
+            $('#btn').css("display","inline") ;
+            $('#btn2').css("display", "none");
+        });
+
+        </script>
+
+    </body>
+</html>

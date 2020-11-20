@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Canvas</title>
+    </head>
+    <body>
+        <video controls="true"  id="video" src="video.mp4" autoplay="true">
+            
+        </video>
+
+        <canvas id="canvas"  width="300" height="300">
+            
+        </canvas>
+<br>
+        <button id="btn">Take picture</button>
+        <button id="draw_btn">Take image</button>
+
+         <script>
+            let video = document.querySelector('#video');
+            let canvas = document.querySelector("#canvas");
+            let canvas_smile = document.getElementById('canvas');
+            let button = document.querySelector("#btn");
+            let button2 = document.querySelector("#draw_btn");
+            let context = canvas.getContext('2d');
+            let rotation_of_smile = 0;
+
+            button.addEventListener('click', () =>{
+                context.drawImage(video, 0, 0, 300, 300);
+            })    
+
+             button2.addEventListener('click', () =>{
+            
+                if (canvas.getContext){
+                    
+                   var cw=canvas.width;
+                   var ch=canvas.height;
+                   var rr=Math.min(cw,ch);
+                   var cx=rr/2;
+                   var cy=rr/2;
+                   //Круг
+                   context.fillStyle = "yellow";
+                   context.beginPath();
+                   context.arc(cx, cy, Math.floor(rr*0.25), 0, 2*Math.PI);
+                   context.closePath();
+                   context.fill();
+                   context.lineWidth = 2;
+                   context.stroke();
+                   context.fillStyle = "black";
+                   //Левый глаз
+                   context.beginPath();
+                   context.arc(Math.floor(rr*0.41), Math.round(rr*0.4), Math.round(rr*0.03), 0, 2*Math.PI);
+                   context.closePath();
+                   context.fill();
+                   //Правый глаз
+                   context.beginPath();
+                   context.arc(Math.ceil(rr*0.59), Math.floor(rr*0.4), Math.round(rr*0.03), 0, 2*Math.PI);
+                   context.closePath();
+                   context.fill();
+                   //Рот
+                   context.beginPath();
+                   context.arc(cx, Math.round(rr*0.52), Math.round(rr*0.13), Math.PI, 2*Math.PI, true);
+                   context.closePath();
+                   context.fill();
+                   }
+
+                    canvas_smile.addEventListener('click', (event) => {
+                        canvas_smile.style.transform = `rotate(${rotation_of_smile}deg)`
+                        rotation_of_smile += 5;
+                        //setInterval( 100);
+                    })
+                
+                })        
+
+        </script>     
+    </body>
+</html>
