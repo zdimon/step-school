@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+
+   <head>
+
+    <meta charset="utf-8">
+
+   </head>
+
+   <body>
+
+      
+      <video width = "500" height="300" autoplay = "true" src="1.mp4" controls="controls" id = "videoElement"></video>
+      <canvas width = "500" height="300" id="canvas"> </canvas>
+      <button id = "take">Take picture</button>
+      <div id="1"> 
+        <button id = "draw">Draw</button>
+      </div>
+      
+      <script>
+
+        var video = document.querySelector('#videoElement');
+        var button = document.querySelector('#take')
+        var canvas = document.querySelector('#canvas')
+        var buttonn = document.querySelector('#draw')
+
+        button.addEventListener( 'click', (event)  => {
+
+            var context = canvas.getContext('2d');
+            var data = canvas.toDataURL('image/png');
+            console.log(data);
+            context.drawImage(video, 0, 0, 500, 300);
+        });
+
+        buttonn.addEventListener( 'click', (event)  => {
+        var context = canvas.getContext('2d');
+        context.fillRect(0,0,100,100);
+            
+        });
+        
+
+
+        
+
+      </script>
+   </body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html lang="en">
+
+   <head>
+
+    <meta charset="utf-8">
+
+   </head>
+
+   <body >
+
+      <h1> Канвас </h1>
+
+      <video width="300" height="200" controls="true" autoplay="true" id="videoElement"></video>
+      <canvas id="canvas" width="300" height="200" > </canvas>
+      <button id="take">Take picture</button>
+      <button id="paint">Paint</button>
+
+      <script>
+        var video = document.querySelector("#videoElement");
+        var button = document.querySelector("#take");
+        var canvas = document.querySelector("#canvas");
+        var context = canvas.getContext('2d');
+        var buttonPaint = document.querySelector("#paint");
+
+        button.addEventListener('click', (event) => {
+            context.drawImage(video, 0, 0, 270, 200)
+        })
+
+        /*if(navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream){
+                video.srcObject = stream;
+            })
+        }*/
+
+        buttonPaint.addEventListener('click', function(){
+            var angle = 0;
+        var angleStep = 10;
+        var fps=20;
+
+           
+            function draw(){
+            var cw=canvas.width;
+            var ch=canvas.height;
+            var rr=Math.min(cw,ch);
+            var cx=rr/2;
+            var cy=rr/2;
+            //Круг
+            context.fillStyle = "yellow";
+            context.beginPath();
+            context.arc(cx, cy, Math.floor(rr*0.25), 0, 2*Math.PI);
+            context.closePath();
+            context.fill();
+            context.lineWidth = 2;
+            context.stroke();
+            context.fillStyle = "black";
+            //Левый глаз
+            context.beginPath();
+            context.arc(Math.floor(rr*0.41), Math.round(rr*0.4), Math.round(rr*0.03), 0, 2*Math.PI);
+            context.closePath();
+            context.fill();
+            //Правый глаз
+            context.beginPath();
+            context.arc(Math.ceil(rr*0.59), Math.floor(rr*0.4), Math.round(rr*0.03), 0, 2*Math.PI);
+            context.closePath();
+            context.fill();
+            //Рот
+            context.beginPath();
+            context.arc(cx, Math.round(rr*0.52), Math.round(rr*0.13), Math.PI, 2*Math.PI, true);
+            context.closePath();
+            context.fill();
+
+            context.translate(100, 100);
+            context.rotate(angle * Math.PI / 180);
+            angle += angleStep;
+            context.beginPath();
+            context.moveTo(-50, -50);
+            context.lineTo(50, 50);
+            context.moveTo(-50, 50);
+            context.lineTo(50, -50);
+            context.stroke();
+            // reset current transformation matrix to the identity matrix
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            }
+        
+        setInterval(draw, 1000/fps);
+        })
+      </script>
+
+   </body>
+
+</html>
