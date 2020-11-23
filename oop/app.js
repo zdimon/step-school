@@ -18,6 +18,7 @@ class Animal {
 
     constructor(canjump) {
         this.canjump = canjump;
+        console.log(this.canjump);
     }
 
     show() {
@@ -34,9 +35,9 @@ class Animal {
         `;
 
         $('#root').append(tpl);
-        $(`#m-button-${this.name}`).on('click',this.move);
-        $(`#v-button-${this.name}`).on('click',this.voice);
-        $(`#j-button-${this.name}`).on('click',this.jump);
+        $(`#m-button-${this.name}`).on('click',() => {this.move()});
+        $(`#v-button-${this.name}`).on('click',() => { this.voice() });
+        $(`#j-button-${this.name}`).on('click',() => {this.jump()});
     }
 
     move(){
@@ -44,6 +45,7 @@ class Animal {
     }
 
     jump(){
+        
         this.canjump.jump();
     }
 }
@@ -108,8 +110,12 @@ class CanNotJump {
 
 const dog = new Dog('bobik.png','Bobik', new CanJump());
 dog.show();
+
 const cat = new Cat('murka.png','Murka', new CanJump());
 cat.show();
+
+cat.canjump = new CanNotJump();
+
 
 const woodencat = new WoodenCat('catwood.png','MurkaWood', new CanNotJump());
 woodencat.show();
