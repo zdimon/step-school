@@ -113,13 +113,10 @@ class I extends Person
 {
     constructor (Name, Age)
     {
-       
+        
     }
 }
 
-const foo = new Person()
-
-console.dir(Name)
 
 
 
