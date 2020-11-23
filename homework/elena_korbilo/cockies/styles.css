@@ -1,0 +1,24 @@
+body {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#login {
+    margin-top: 200px;
+    margin-left: 25px;
+}
+#password {
+    margin-top: 10px;
+    margin-left: 2px;
+}
+
+button {
+    margin-top: 10px;
+    margin-left: 200px;
+    width: 50px;
+}
+
+#Unlogin {
+    display: none;
+    border-style: none;
+}
