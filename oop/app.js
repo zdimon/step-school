@@ -28,6 +28,7 @@ class Animal {
             <p>
             <button id="m-button-${this.name}">Move</button>
             <button id="v-button-${this.name}">Voice</button>
+            <button id="j-button-${this.name}">Jump</button>
             </p>
         <div/>
         `;
@@ -35,10 +36,15 @@ class Animal {
         $('#root').append(tpl);
         $(`#m-button-${this.name}`).on('click',this.move);
         $(`#v-button-${this.name}`).on('click',this.voice);
+        $(`#j-button-${this.name}`).on('click',this.jump);
     }
 
     move(){
-        console.log('I an mooving');
+        console.log('I am mooving');
+    }
+
+    jump(){
+        console.log('I am jumping!!!');
     }
 }
 
@@ -69,10 +75,28 @@ class Cat extends Animal {
 }
 
 
+class WoodenCat extends Animal {
+
+    constructor(image,name) {
+        super();
+        this.image = image;
+        this.name = name;
+    }
+
+    voice(){
+        console.log('miau miauuu!');
+    }
+}
+
+
+
 const dog = new Dog('bobik.png','Bobik');
 dog.show();
 const cat = new Cat('murka.png','Murka');
 cat.show();
+
+const woodencat = new WoodenCat('catwood.png','MurkaWood');
+woodencat.show();
 
 
 
