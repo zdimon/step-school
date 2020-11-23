@@ -16,8 +16,8 @@
 class Animal {
     size = 150;
 
-    constructor() {
-
+    constructor(canjump) {
+        this.canjump = canjump;
     }
 
     show() {
@@ -44,14 +44,14 @@ class Animal {
     }
 
     jump(){
-        console.log('I am jumping!!!');
+        this.canjump.jump();
     }
 }
 
 class Dog extends Animal {
 
-    constructor(image,name) {
-        super();
+    constructor(image,name,canjump) {
+        super(canjump);
         this.image = image;
         this.name = name;
     }
@@ -63,8 +63,8 @@ class Dog extends Animal {
 
 class Cat extends Animal {
 
-    constructor(image,name) {
-        super();
+    constructor(image,name,canjump) {
+        super(canjump);
         this.image = image;
         this.name = name;
     }
@@ -77,8 +77,8 @@ class Cat extends Animal {
 
 class WoodenCat extends Animal {
 
-    constructor(image,name) {
-        super();
+    constructor(image,name,canjump) {
+        super(canjump);
         this.image = image;
         this.name = name;
     }
@@ -86,16 +86,32 @@ class WoodenCat extends Animal {
     voice(){
         console.log('miau miauuu!');
     }
+    jump(){
+        console.log('I can not jumping SORRY!!!');
+    }
 }
 
+class CanJump {
+    jump() {
+        console.log('jump jump');
+    }
+} 
 
 
-const dog = new Dog('bobik.png','Bobik');
+class CanNotJump {
+    jump() {
+        console.log('I can not Jump!');
+    }
+} 
+
+
+
+const dog = new Dog('bobik.png','Bobik', new CanJump());
 dog.show();
-const cat = new Cat('murka.png','Murka');
+const cat = new Cat('murka.png','Murka', new CanJump());
 cat.show();
 
-const woodencat = new WoodenCat('catwood.png','MurkaWood');
+const woodencat = new WoodenCat('catwood.png','MurkaWood', new CanNotJump());
 woodencat.show();
 
 
