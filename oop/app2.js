@@ -12,12 +12,19 @@ class Bankomat{
         this.cards = cards;
     }
 
-    check(number) {
+    check(number, pin) {
 
     }
 
-    replanish(cardNumber, sum) {
-
+    replanish() {
+        let number = $('#cards').val();
+        let pin = $('#pin').val();
+        let sum = $('#sum').val();
+        if (this.check()) {
+            console.log('Werry welll');
+        } else {
+            alert('Pin error!!!');
+        }
     }
 
 
@@ -30,9 +37,11 @@ class Bankomat{
         <div>
             <img src="bobik.png" width="200" />
             <p>
-            <select id="cards>
+            <select id="cards">
                 ${ this.cards.map((el) => `<option value="${el.number}">${el.number}</option>`) }
             </select>
+            PIN code <input id="pin" />
+            Balance: <input id="sum" />
             <button id="s-button">Show</button>
             <button id="r-button">Repl</button>
             </p>
