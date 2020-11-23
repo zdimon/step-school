@@ -26,13 +26,15 @@ class Animal {
         <div>
             <img src="${this.image}" width="${this.size}" />
             <p>
-            <button>Move</button>
-            <button>Voice</button>
+            <button id="m-button-${this.name}">Move</button>
+            <button id="v-button-${this.name}">Voice</button>
             </p>
         <div/>
         `;
 
         $('#root').append(tpl);
+        $(`#m-button-${this.name}`).on('click',this.move);
+        $(`#v-button-${this.name}`).on('click',this.voice);
     }
 
     move(){
