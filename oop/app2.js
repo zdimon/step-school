@@ -30,6 +30,9 @@ class Bankomat{
         <div>
             <img src="bobik.png" width="200" />
             <p>
+            <select id="cards>
+                ${ this.cards.map((el) => `<option value="${el.number}">${el.number}</option>`) }
+            </select>
             <button id="s-button">Show</button>
             <button id="r-button">Repl</button>
             </p>
