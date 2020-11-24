@@ -1,15 +1,27 @@
 class Card {
+   
     constructor(number,pin,account){
+        var _pin = pin;
         this.number = number;
-        this.pin = pin;
         this.account = account;
+        this.getPin = function(){
+            return _pin;
+        }
     }
+
 }
 
 class Bankomat{
     cards = [];
-    constructor(cards) {
-        this.cards = cards;
+    constructor() {
+        this.cardFabrik();
+    }
+
+    cardFabrik(){
+        const card1 = new Card('123456','123',0);
+        const card2 = new Card('223456','223',0);
+        const card3 = new Card('323456','323',0);
+        this.cards = [card1, card2, card3]
     }
 
     check(number, pin) {
@@ -65,9 +77,10 @@ class Bankomat{
 
 }
 
-const card1 = new Card('123456','123',0);
-const card2 = new Card('223456','223',0);
-const card3 = new Card('323456','323',0);
 
-const baankomat = new Bankomat([card1,card2,card2]);
+
+const baankomat = new Bankomat();
 baankomat.display();
+
+
+
