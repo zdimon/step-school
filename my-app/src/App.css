@@ -33,6 +33,10 @@
     transform: rotate(0deg);
   }
   to {
+<<<<<<< HEAD
     transform: rotate(5000deg);
+=======
+    transform: rotate(360deg);
+>>>>>>> 1f1c8e2be7b52e63e8e527007a381a31b6e9c604
   }
 }
