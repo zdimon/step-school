@@ -1,4 +1,11 @@
 import React from 'react';
+<<<<<<< HEAD
+
+export function Comment(props: any) {
+    return (
+        <div>
+            <h1>{ props.comment }</h1>
+=======
 import { PrimaryButton } from '@fluentui/react';
 import { DatePicker, DayOfWeek, IDatePickerStrings, mergeStyleSets } from 'office-ui-fabric-react';
 
@@ -21,6 +28,7 @@ export function Comment(props: any) {
             <img width="50" src={props.user.image} />
             <PrimaryButton text="Standard" onClick={_alertClicked} />
            
+>>>>>>> b5e9e9b77beab97bd3c1981d320beb05b966f911
         </div>
     )
 }
