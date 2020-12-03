@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@fluentui/react": "^7.153.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
+=======
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+<<<<<<< HEAD
+>>>>>>> b5e9e9b77beab97bd3c1981d320beb05b966f911
     "@types/jest": "^26.0.15",
     "@types/node": "^12.19.6",
     "@types/react": "^16.14.2",
@@ -15,6 +22,14 @@
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "typescript": "^4.1.2",
+<<<<<<< HEAD
+=======
+=======
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+>>>>>>> 1f1c8e2be7b52e63e8e527007a381a31b6e9c604
+>>>>>>> b5e9e9b77beab97bd3c1981d320beb05b966f911
     "web-vitals": "^0.2.4"
   },
   "scripts": {
