@@ -26,7 +26,6 @@ function App() {
 
   function validateEmail() : boolean
   {
-    console.log(validator.isEmail( email ));
     return validator.isEmail( email );
   }
 
