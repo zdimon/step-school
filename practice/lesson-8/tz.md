@@ -12,6 +12,7 @@ required (if you want, you can use Bootstrap 4).
 * password validation: minimal string length - 6 chars, +2 points
 * password confirmation validation, this field must equals to password field, + 2 points
 * for validatation you can use npm library [validator](https://www.npmjs.com/package/validator) or create own regular expressions patterns.
+* if one or more fields are invalid -> disable btn
 
 ## Estimation
 
